@@ -20,12 +20,14 @@
         var optionLabel = component.get('v.label');
         var optionLabelLc = $A.util.isEmpty(optionLabel) ? '' : optionLabel.toLowerCase();
         var searchTerm = event.getParam('arguments');
+        
         var searchTermLc = $A.util.isEmpty(searchTerm) ? '' : searchTerm[0].toLowerCase();
 
         component.set('v.filtered', optionLabelLc.indexOf(searchTermLc) === -1);
-        component.set('v.labelHtml', optionLabel.replace(new RegExp('(' + searchTerm + ')', 'i'), '<mark>$1</mark>'));
-    },
-    optionSelected: function(component, event, helper) {
+        
+        component.set('v.labelHtml', optionLabel.replace(new RegExp('(' + searchTerm[0].replace(/(.)/g, function(a) { if (a == '\\') { a = '\\' + a; } return '[' + a + ']' }) + ')', 'i'), '<mark>$1</mark>'));
+    }, 
+    select: function(component, event, helper) {
         event.stopPropagation();
 
         if (component.get('v.disabled')) {
