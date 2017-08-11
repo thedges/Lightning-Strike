@@ -1,6 +1,6 @@
 # Lightning-Strike
 
-Just re-hosting the fine baseline of Appiphony components detailed here: http://www.lightningstrike.io
+Just re-hosting the fine baseline of Appiphony components (version 0.80) detailed here: http://www.lightningstrike.io
 
 Here is convenient deploy button...
 
