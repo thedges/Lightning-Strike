@@ -8,7 +8,7 @@ License: BSD 2-Clause License
 -->
 <aura:component >
     <aura:handler name="init" value="{!this}" action="{!c.onInit}"/>
-    <aura:registerEvent name="navigate" type="c:fiddle_evt_navigate"/>
+    <!-- <aura:registerEvent name="navigate" type="c:fiddle_evt_navigate"/> -->
 
     <!-- External -->
     <aura:attribute name="iconName" type="String" default="standard:carousel"/>
