@@ -181,8 +181,15 @@ License: BSD 3-Clause License*/
         helper.getRecordByValue(component, event, helper);
         helper.getRecordLabel(component, event, helper);
 
-        component.find('lookupInput').getElement().value = '';
-        helper.getRecordsBySearchTerm(component, event, helper);
+        try
+        {
+          component.find('lookupInput').getElement().value = '';
+          helper.getRecordsBySearchTerm(component, event, helper);
+        }
+        catch (err)
+        {
+          console.log(err);
+        }
     },
     handleOrderChange: function(component, event, helper) {
         component.set('v.initCallsRunning', 1);
